@@ -10,7 +10,7 @@ const port = process.env.PORT || 8000
 
 // Paths
 const st_path = path.join(__dirname,"./public");
-const temp_path = path.join(__dirname,"./templates");
+const temp_path = path.join(__dirname,"./templates/views");
 // console.log(temp_path)
 const par_path = path.join(__dirname,"./templates/partials");
 
