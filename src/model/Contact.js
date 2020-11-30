@@ -18,10 +18,10 @@ var userSchema = new mongoose.Schema({
         required:true,
         unique:true,
     },
-    // message:{
-    //     type:String,
-    //     required:true,
-    // },
+    message:{
+        type:String,
+        required:true,
+    },
 });
 
 //Export the model
