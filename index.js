@@ -33,11 +33,13 @@ app.post("/api", async (req, res) => {
         name: req.body.name,
         email: req.body.email,
         phone: req.body.phone,
-        message: req.body.message
+        message: req.body.message,
      }
      );
      await user.save();
-     res.send(user);
+   //   res.send(user);
+   console.log(user)
+   res.render('index')
   } catch (error) {
      return res.status(400).json({ message: error.message });
   }
