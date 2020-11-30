@@ -3,6 +3,7 @@ const app = express()
 const path = require('path');
 const hbs = require('hbs');
 const approuter = require('./src/routes/app');
+const USER = require('./src/model/Contact');
 require("./src/db/conn")
 
 const port = process.env.PORT || 8000
@@ -23,9 +24,25 @@ app.set("views", temp_path);
 hbs.registerPartials(par_path)
 
 
-// app.get('/', (req, res) => 
-// res.render("index")
-// )
+
+app.post("/api", async (req, res) => {
+  try {
+     const user = new USER(
+      //   req.body
+        {
+        name: req.body.name,
+        email: req.body.email,
+        phone: req.body.phone,
+        message: req.body.message
+     }
+     );
+     await user.save();
+     res.send(user);
+  } catch (error) {
+     return res.status(400).json({ message: error.message });
+  }
+   
+});
 
 
 
