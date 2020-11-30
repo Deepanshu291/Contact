@@ -12,7 +12,6 @@ const port = process.env.PORT || 8000
 // Paths
 const st_path = path.join(__dirname,"./public");
 const temp_path = path.join(__dirname,"./templates/views");
-// console.log(temp_path)
 const par_path = path.join(__dirname,"./templates/partials");
 
 // Middleware
@@ -34,7 +33,6 @@ app.post("/signup", async (req, res) => {
     if(password == cpassword){
 
      const user = new USER(
-      //   req.body
         {
         name: req.body.name,
         email: req.body.email,
@@ -43,7 +41,6 @@ app.post("/signup", async (req, res) => {
      }
      );
      await user.save();
-   //   res.send(user);
    console.log(user)
    res.render('index')
   } 
