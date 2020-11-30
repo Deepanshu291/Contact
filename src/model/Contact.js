@@ -5,7 +5,7 @@ var userSchema = new mongoose.Schema({
     name:{
         type:String,
         required:true,
-        unique:true,
+        // unique:true,
         index:true,
     },
     email:{
@@ -13,16 +13,11 @@ var userSchema = new mongoose.Schema({
         required:true,
         unique:true,
     },
-    phone:{
+    password:{
         type:String,
         required:true,
-        unique:true,
     },
-    // message:{
-    //     type:String,
-    //     required:true,
-    // },
 });
 
 //Export the model
-module.exports = mongoose.model('Contact', userSchema);
+module.exports = mongoose.model('Sign', userSchema);
